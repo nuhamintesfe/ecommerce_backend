@@ -1,10 +1,11 @@
-from django.shortcuts import render
-
-# Create your views here.
+from rest_framework import generics
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from django.urls import path
+from .serializers import RegisterSerializer
+from .models import CustomUser
+from rest_framework.permissions import AllowAny
 
-urlpatterns = [
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-]
+
+class RegisterView(generics.CreateAPIView):
+    queryset = CustomUser.objects.all()
+    permission_classes = [AllowAny]
+    serializer_class = RegisterSerializer
