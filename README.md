@@ -49,58 +49,68 @@ This backend powers product listings, orders, user management, and shop operatio
 
 ## 📦 Installation
 
-### **1. Clone the Repository**
+## 1️⃣ Clone the Repository  
 ```bash
 git clone https://github.com/nuhamintesfe/ecommerce_backend.git
 cd ecommerce_backend
-## 2. Create a Virtual Environment
-```bash
+ls -l
+2️⃣ Create a Virtual Environment
+Linux/MacOS:
+
+bash
 python -m venv env
-source env/bin/activate  # Linux/Mac
-env\Scripts\activate     # Windows
-## 3. Install Dependencies
-```bash
+source env/bin/activate
+Windows:
+
+bash
+python -m venv env
+env\Scripts\activate
+3️⃣ Install Dependencies
+bash
 pip install -r requirements.txt
-## 4. Configure Environment Variables
-Create a .env file in the root directory:
+4️⃣ Configure Environment Variables
+Create a .env file in the root directory with your settings (e.g., database credentials, secret keys).
 
-## 5. Run Migrations
-``` bash
+5️⃣ Run Database Migrations
+bash
 python manage.py migrate
-## 6. Create a Superuser
-``` bash
+6️⃣ Create an Admin Superuser
+bash
 python manage.py createsuperuser
-## 7. Start the Development Server
-``` bash
+7️⃣ Start the Development Server
+bash
 python manage.py runserver
-Visit: http://127.0.0.1:8000/
+Access the API at: http://127.0.0.1:8000/
 
-## 📚 API Documentation
-The API comes with Swagger documentation.
-Visit:
-``` bash
-/swagger/   → Swagger UI
-/redoc/     → ReDoc Documentation
-📌 Example API Endpoints
-## Products
-- ** GET /api/products/ → List products with filtering, sorting, and pagination.
-- ** POST /api/products/ → Create a new product.
-- ** GET /api/products/{id}/ → Retrieve a product.
+📚 API Documentation
+Automatically generated with Swagger/ReDoc:
 
-## Orders
-- ** GET /api/orders/ → List all orders for logged-in user.
-- ** POST /api/orders/ → Create a new order.
+http://127.0.0.1:8000/swagger/ → Interactive Swagger UI
 
-## Users
-- ** POST /api/users/register/ → Register a new user.
-- ** POST /api/token/ → Login and get JWT token.
-- ** POST /api/token/refresh/ → Refresh JWT token.
+http://127.0.0.1:8000/redoc/ → ReDoc Documentation
 
-## 🧪 Running Tests
-``` bash
+🔍 Key Endpoints
+Products
+GET /api/products/ → List all products (filter/sort supported)
+
+POST /api/products/ → Create a new product (Admin only)
+
+GET /api/products/{id}/ → Get product details
+
+Orders
+GET /api/orders/ → List user’s orders (Authentication required)
+
+POST /api/orders/ → Create a new order
+
+Users & Auth
+POST /api/users/register/ → User registration
+
+POST /api/token/ → Obtain JWT token (Login)
+
+POST /api/token/refresh/ → Refresh JWT token
+
+🧪 Run Tests
+bash
 python manage.py test
-##📄 License
-This project is licensed under the MIT License.
-
-## 👩‍💻 Author
-Nuhamin Tesfaye
+📜 License
+MIT License © 2024 Nuhamin Tesfaye
