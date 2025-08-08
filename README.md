@@ -50,67 +50,65 @@ This backend powers product listings, orders, user management, and shop operatio
 ## 📦 Installation
 
 ## 1️⃣ Clone the Repository  
-```bash
+```
 git clone https://github.com/nuhamintesfe/ecommerce_backend.git
 cd ecommerce_backend
-ls -l
-2️⃣ Create a Virtual Environment
+```
+## 2️⃣ Create a Virtual Environment
 Linux/MacOS:
-
-bash
+```
 python -m venv env
 source env/bin/activate
+```
 Windows:
-
-bash
+```
 python -m venv env
 env\Scripts\activate
-3️⃣ Install Dependencies
-bash
+```
+## 3️⃣ Install Dependencies
+```
 pip install -r requirements.txt
-4️⃣ Configure Environment Variables
+```
+## 4️⃣ Configure Environment Variables
 Create a .env file in the root directory with your settings (e.g., database credentials, secret keys).
 
-5️⃣ Run Database Migrations
-bash
+## 5️⃣ Run Database Migrations
+```
 python manage.py migrate
-6️⃣ Create an Admin Superuser
-bash
+```
+## 6️⃣ Create an Admin Superuser
+```
 python manage.py createsuperuser
-7️⃣ Start the Development Server
-bash
+```
+## 7️⃣ Start the Development Server
+```
 python manage.py runserver
+```
 Access the API at: http://127.0.0.1:8000/
 
-📚 API Documentation
-Automatically generated with Swagger/ReDoc:
+## 📚 API Documentation
+- Automatically generated with Swagger/ReDoc:
+- http://127.0.0.1:8000/swagger/ → Interactive Swagger UI
+- http://127.0.0.1:8000/redoc/ → ReDoc Documentation
 
-http://127.0.0.1:8000/swagger/ → Interactive Swagger UI
+## 🔍 Key Endpoints
+## Products
+- GET /api/products/ → List all products (filter/sort supported)
+- POST /api/products/ → Create a new product (Admin only)
+- GET /api/products/{id}/ → Get product details
 
-http://127.0.0.1:8000/redoc/ → ReDoc Documentation
+## Orders
+- GET /api/orders/ → List user’s orders (Authentication required)
+- POST /api/orders/ → Create a new order
 
-🔍 Key Endpoints
-Products
-GET /api/products/ → List all products (filter/sort supported)
+## Users & Auth
+- POST /api/users/register/ → User registration
+- POST /api/token/ → Obtain JWT token (Login)
+- POST /api/token/refresh/ → Refresh JWT token
 
-POST /api/products/ → Create a new product (Admin only)
-
-GET /api/products/{id}/ → Get product details
-
-Orders
-GET /api/orders/ → List user’s orders (Authentication required)
-
-POST /api/orders/ → Create a new order
-
-Users & Auth
-POST /api/users/register/ → User registration
-
-POST /api/token/ → Obtain JWT token (Login)
-
-POST /api/token/refresh/ → Refresh JWT token
-
-🧪 Run Tests
-bash
+## 🧪 Run Tests
+```
 python manage.py test
-📜 License
-MIT License © 2024 Nuhamin Tesfaye
+```
+## 📜 License
+MIT License © 2025 Nuhamin Tesfaye
