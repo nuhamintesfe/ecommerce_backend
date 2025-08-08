@@ -1,147 +1,106 @@
-🛒 E-Commerce Backend
-A Django REST Framework backend for a fully-featured e-commerce platform.
-This repository powers product listings, shopping, order management, and user authentication with advanced features like filtering, sorting, and pagination for optimal API performance.
+# 🛒 E-commerce Backend
 
-📂 Project Structure
-bash
-Copy
-Edit
-ecommerce_backend/
-├── core/         # Project settings, middleware, utilities
-├── orders/       # Order creation, tracking, and management
-├── products/     # Product CRUD, filtering, sorting, and search
-├── shop/         # Shop details and management
-├── users/        # Authentication, registration, and user profiles
-└── requirements.txt
-✨ Features
-🔹 Core
-Centralized configuration and reusable utilities
+A fully-featured backend for an E-commerce application built with **Django** and **Django REST Framework (DRF)**.  
+This backend powers product listings, orders, user management, and shop operations with advanced features like **filtering, sorting, and pagination**.
 
-Global exception handling
+---
 
-Custom middleware support
+## 🚀 Features
 
-🔹 Products
-CRUD operations for product management
+### **Core**
+- Project-wide settings and configurations.
+- Environment variable management.
+- DRF setup with JWT Authentication.
 
-Advanced filtering by category, price range, brand, etc.
+### **Products**
+- Create, update, delete, and list products.
+- **Filtering** by category, price range, and availability.
+- **Sorting** by price, name, or date added.
+- **Pagination** for efficient product browsing.
 
-Sorting (e.g., price low → high, newest first)
+### **Orders**
+- Place and manage orders.
+- Track order status.
+- Associate orders with users.
+- Calculate totals dynamically.
 
-Pagination for efficient API responses
+### **Shop**
+- Manage shop details and branding.
+- Control visibility and inventory status.
 
-Database indexing on frequently queried fields
+### **Users**
+- User registration and authentication.
+- JWT-based secure login/logout.
+- Role-based permissions (e.g., Admin, Customer).
+- Profile management.
 
-🔹 Shop
-Shop profile and details management
+---
 
-Links products to a specific shop
+## 🛠️ Tech Stack
 
-🔹 Orders
-Create and manage customer orders
+- **Backend Framework:** Django, Django REST Framework
+- **Database:** PostgreSQL / MySQL (configurable)
+- **Authentication:** JWT (JSON Web Tokens)
+- **Filtering & Sorting:** `django-filter`
+- **Pagination:** DRF’s built-in pagination
+- **Environment Management:** `django-environ`
 
-Track order status (pending, shipped, delivered)
+---
 
-Order history for users
+## 📦 Installation
 
-🔹 Users
-JWT Authentication (login, registration)
-
-User profile management
-
-Permissions and role-based access
-
-🛠️ Tech Stack
-Backend Framework: Django, Django REST Framework (DRF)
-
-Authentication: JWT (via djangorestframework-simplejwt)
-
-Database: PostgreSQL / MySQL (configurable)
-
-Filtering & Sorting: django-filter, DRF ordering
-
-Pagination: DRF page and limit-based pagination
-
-Environment Management: django-environ
-
-🚀 Getting Started
-1️⃣ Clone the Repository
-bash
-Copy
-Edit
+### **1. Clone the Repository**
+```bash
 git clone https://github.com/nuhamintesfe/ecommerce_backend.git
 cd ecommerce_backend
-2️⃣ Create and Activate Virtual Environment
-bash
-Copy
-Edit
+## 2. Create a Virtual Environment
+```bash
 python -m venv env
-source env/bin/activate   # On macOS/Linux
-env\Scripts\activate      # On Windows
-3️⃣ Install Dependencies
-bash
-Copy
-Edit
+source env/bin/activate  # Linux/Mac
+env\Scripts\activate     # Windows
+## 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-4️⃣ Set Up Environment Variables
-Create a .env file in the project root:
+## 4. Configure Environment Variables
+Create a .env file in the root directory:
 
-env
-Copy
-Edit
-DEBUG=True
-SECRET_KEY=your_secret_key
-DATABASE_URL=postgres://user:password@localhost:5432/dbname
-ALLOWED_HOSTS=localhost,127.0.0.1
-5️⃣ Run Migrations
-bash
-Copy
-Edit
+## 5. Run Migrations
+``` bash
 python manage.py migrate
-6️⃣ Create a Superuser
-bash
-Copy
-Edit
+## 6. Create a Superuser
+``` bash
 python manage.py createsuperuser
-7️⃣ Start the Development Server
-bash
-Copy
-Edit
+## 7. Start the Development Server
+``` bash
 python manage.py runserver
-📡 API Features
-Filtering: /api/products/?category=electronics&min_price=100&max_price=500
+Visit: http://127.0.0.1:8000/
 
-Sorting: /api/products/?ordering=-price (prefix with - for descending)
+## 📚 API Documentation
+The API comes with Swagger documentation.
+Visit:
+``` bash
+/swagger/   → Swagger UI
+/redoc/     → ReDoc Documentation
+📌 Example API Endpoints
+## Products
+- ** GET /api/products/ → List products with filtering, sorting, and pagination.
+- ** POST /api/products/ → Create a new product.
+- ** GET /api/products/{id}/ → Retrieve a product.
 
-Pagination: /api/products/?page=2&page_size=10
+## Orders
+- ** GET /api/orders/ → List all orders for logged-in user.
+- ** POST /api/orders/ → Create a new order.
 
-Search: /api/products/?search=keyword
+## Users
+- ** POST /api/users/register/ → Register a new user.
+- ** POST /api/token/ → Login and get JWT token.
+- ** POST /api/token/refresh/ → Refresh JWT token.
 
-📖 API Documentation
-This project includes Swagger/Redoc API documentation.
-
-Run the server and visit:
-
-Swagger UI: http://127.0.0.1:8000/swagger/
-
-Redoc: http://127.0.0.1:8000/redoc/
-
-🔒 Authentication
-JWT authentication is used for secure API access.
-
-Obtain tokens at /api/auth/login/.
-
-Include Authorization: Bearer <token> in headers for protected endpoints.
-
-🧩 Future Enhancements
-Payment gateway integration
-
-Wishlist & cart features
-
-Product reviews and ratings
-
-Email notifications
-
-📜 License
+## 🧪 Running Tests
+``` bash
+python manage.py test
+##📄 License
 This project is licensed under the MIT License.
 
+## 👩‍💻 Author
+Nuhamin Tesfaye
