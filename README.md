@@ -84,27 +84,33 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
-Access the API at: http://127.0.0.1:8000/
+Access the API at: (https://ecommerce-backend-4-4y57.onrender.com/)
 
 ## 📚 API Documentation
-- Automatically generated with Swagger/ReDoc:
-- http://127.0.0.1:8000/swagger/ → Interactive Swagger UI
-- http://127.0.0.1:8000/redoc/ → ReDoc Documentation
+- Automatically generated with Swagger:
+- https://ecommerce-backend-4-4y57.onrender.com/swagger/ → Interactive Swagger UI
 
 ## 🔍 Key Endpoints
+## Admin
+/admin/shop/  → admin page api to  manage the endpoints
 ## Products
 - GET /api/products/ → List all products (filter/sort supported)
 - POST /api/products/ → Create a new product (Admin only)
 - GET /api/products/{id}/ → Get product details
+- 
+##Category
+- GET /api/catagories/ → List all category (filter/sort supported)
+- POST /api/catagories/ → Create a new category (Admin only)
+- GET /api/catagories/{id}/ → Get category details
 
+  ## Users & Auth
+- POST /api/auth/register/ → User registration
+- POST /api/auth/token/ → Obtain JWT token (Login)
+- POST /api/auth/token/refresh/ → Refresh JWT token
+  
 ## Orders
 - GET /api/orders/ → List user’s orders (Authentication required)
 - POST /api/orders/ → Create a new order
-
-## Users & Auth
-- POST /api/users/register/ → User registration
-- POST /api/token/ → Obtain JWT token (Login)
-- POST /api/token/refresh/ → Refresh JWT token
 
 ## 🧪 Run Tests
 ```
